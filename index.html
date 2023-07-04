@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SCREAM</title>
+	<style type="text/css">
+		.total-box {
+			background-color:#edcfc6;
+			position:absolute;
+			top:0px;
+			right:0px;
+			bottom:0px;
+			left:0px;
+		}
+		.row {
+		  display: flex;
+		  max-height: 70%;
+		}
+
+		/* Create three equal columns that sits next to each other */
+		.column {
+		  flex: 50%;
+		  padding: 5px;
+		}
+		.target span {
+		  position:relative;
+		  display:inline-block;
+		  transform-origin:left;
+		}
+		.scrolling-div {
+			  overflow: hidden;
+		}
+		#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="total-box">
+		<div class="">
+			<img src="scream-logo.png" style="margin-left:32px;margin-top:32px;width:200px;">
+		</div>
+		<div class="row">
+			<div class="column">
+				<img src="e-logo.png" style="display:block; margin: auto;max-width: 130px;">
+			</div>
+			<div class="column">
+				<img src="cone1.png" style="z-index:2;display:block; margin: auto;top:-20%;max-height: 130%;position: relative;">
+			</div>
+			<div style="position:absolute; height: 200px;top:60%;">
+				<div class="target" id="target" style="display:inline-block;height:100%;">
+					<span style="color: #004061;font-size:55px;" id="target1">SCREAMINGGGGGGGGGGGGGGGGG</span>
+					<span id="target2">SCREAMING SOON</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<a href="#"><img src="social-icons.png" style="float:right;margin-right:32px;margin-bottom:32px;position: relative; z-index: 2;"></a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		Math.easeInOutSine = (t, b, c, d) =>
+			-c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+		const
+			easing = Math.easeInOutSine,
+		  target = document.querySelector('#target'),
+			bbox = target.getBoundingClientRect(),
+			left = 350,
+		  width = 1000,
+		  height = 300;
+		  otherText = document.querySelector('#target2').innerText;
+		target.innerHTML = document.querySelector('#target1').innerText.split('').map(
+			(char) => `<span style="color: #004061;font-size:72px;font-weight: bold;">${char}</span>`
+		).join('');
+		target.innerHTML += '<br>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+
+		Array.prototype.forEach.call(target.children, (el) => {
+		  const 
+				bbox = el.getBoundingClientRect(),
+		    w = bbox.width,
+		    l = bbox.left - left,
+		    offset = easing(l, 0, height, width),
+		    skew = offset - easing(w + l, 0, height, width),
+		    angle = Math.atan(skew/w);
+		  el.style.transform = `translateY(${-offset}px) skewY(${angle}rad)`;
+		});
+
+	</script>
+</body>
+</html>
