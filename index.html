@@ -5,6 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SCREAM</title>
 	<style type="text/css">
+		@font-face {
+	    font-family: "KochaRough";
+	    src: url("KochaRough.otf") format("opentype");
+		}
+		body {
+		  font-family: 'KochaRough', serif;
+		}
 		.total-box {
 			background-color:#edcfc6;
 			position:absolute;
@@ -83,8 +90,8 @@
 			</div>
 			<div style="position:absolute; height: 200px;top:60%;">
 				<div class="target" id="target" style="display:inline-block;height:100%;">
-					<span style="color: #004061;font-size:55px;" id="target1">SCREAMINGGGGGGGGGGGGGGGGG</span>
-					<span id="target2">SCREAMING SOON</span>
+					<span style="color: #004061;font-size:55px;" id="target1">SCReAMINGGGGGGGGGGGGGGGGGG</span>
+					<span id="target2">SCReAMING SOON</span>
 				</div>
 			</div>
 		</div>
@@ -105,7 +112,7 @@
 		  height = 300;
 		  otherText = document.querySelector('#target2').innerText;
 		target.innerHTML = document.querySelector('#target1').innerText.split('').map(
-			(char) => `<span style="color: #004061;font-size:72px;font-weight: bold;">${char}</span>`
+			(char) => `<span style="color: #004061;font-size:72px;">${char}</span>`
 		).join('');
 		target.innerHTML += '<br>'
 		target.innerHTML += otherText.split('').map(
