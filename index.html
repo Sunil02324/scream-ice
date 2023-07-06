@@ -91,7 +91,7 @@
 			<div style="position:absolute; height: 200px;top:60%;">
 				<div class="target" id="target" style="display:inline-block;height:100%;">
 					<span style="color: #004061;font-size:55px;" id="target1">SCReAMINGGGGGGGGGGGGGGGGGG</span>
-					<span id="target2">SCReAMING SOON</span>
+					<span id="target2">SCReAMING</span><span id="target3">SOON</span>
 				</div>
 			</div>
 		</div>
@@ -111,37 +111,67 @@
 		  width = 1000,
 		  height = 300;
 		  otherText = document.querySelector('#target2').innerText;
+		  otherText1 = document.querySelector('#target3').innerText;
 		target.innerHTML = document.querySelector('#target1').innerText.split('').map(
 			(char) => `<span style="color: #004061;font-size:72px;">${char}</span>`
 		).join('');
-		target.innerHTML += '<br>'
+		target.innerHTML += '<br><div class="scrolling-div"><div id="scroll-text">'
 		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
 		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
 		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
 		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
 		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
 			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
 		).join('');
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
+		target.innerHTML += otherText1.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
+		).join('');
+		target.innerHTML += '</div></div>'
 
 		Array.prototype.forEach.call(target.children, (el) => {
 		  const 
@@ -154,6 +184,18 @@
 		  el.style.transform = `translateY(${-offset}px) skewY(${angle}rad)`;
 		});
 
+	</script>
+	<script type="text/javascript">
+		const flavoursContainer = document.getElementById('target');
+const flavoursScrollWidth = flavoursContainer.scrollWidth;
+
+window.addEventListener('load', () => {
+  self.setInterval(() => {
+    if (flavoursContainer.scrollLeft !== flavoursScrollWidth) {
+      flavoursContainer.scrollTo(flavoursContainer.scrollLeft + 1, 0);
+    }
+  }, 15);
+});
 	</script>
 </body>
 </html>
