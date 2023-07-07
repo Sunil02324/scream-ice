@@ -35,43 +35,7 @@
 		  display:inline-block;
 		  transform-origin:left;
 		}
-		.scrolling-div {
-			  overflow: hidden;
-		}
-		#scroll-text {
-  /* animation properties */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-  
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
-}
-
-/* for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-@keyframes my-animation {
-  from {
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-  }
-  to {
-    -moz-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
+		
 
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -89,9 +53,11 @@
 				<img src="cone1.png" style="z-index:2;display:block; margin: auto;top:-20%;max-height: 130%;position: relative;">
 			</div>
 			<div style="position:absolute; height: 200px;top:60%;">
-				<div class="target" id="target" style="display:inline-block;height:100%;">
+				<div class="target" id="target" style="display:inline-block;">
 					<span style="color: #004061;font-size:55px;" id="target1">SCReAMINGGGGGGGGGGGGGGGGGG</span>
-					<span id="target2">SCReAMING</span><span id="target3">SOON</span>
+				</div>
+				<div class="new_target scroll-text" id="new_target" style="display:inline-block;">
+					<span id="new_target1">SCReAMING SOON&emsp;</span>
 				</div>
 			</div>
 		</div>
@@ -103,78 +69,19 @@
 	<script type="text/javascript">
 		Math.easeInOutSine = (t, b, c, d) =>
 			-c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
-		const
+		var
 			easing = Math.easeInOutSine,
 		  target = document.querySelector('#target'),
 			bbox = target.getBoundingClientRect(),
 			left = 350,
 		  width = 1000,
 		  height = 300;
-		  otherText = document.querySelector('#target2').innerText;
-		  otherText1 = document.querySelector('#target3').innerText;
 		target.innerHTML = document.querySelector('#target1').innerText.split('').map(
 			(char) => `<span style="color: #004061;font-size:72px;">${char}</span>`
 		).join('');
-		target.innerHTML += '<br><div class="scrolling-div"><div id="scroll-text">'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
-		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '<span style="padding-left:2px;padding-right:2px;"></span>'
-		target.innerHTML += otherText1.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;">${char}</span>`
-		).join('');
-		target.innerHTML += '</div></div>'
 
 		Array.prototype.forEach.call(target.children, (el) => {
-		  const 
+		  var 
 				bbox = el.getBoundingClientRect(),
 		    w = bbox.width,
 		    l = bbox.left - left,
@@ -186,16 +93,73 @@
 
 	</script>
 	<script type="text/javascript">
-		const flavoursContainer = document.getElementById('target');
-const flavoursScrollWidth = flavoursContainer.scrollWidth;
+		Math.easeInOutSine = (t, b, c, d) =>
+			-c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+		var
+			easing = Math.easeInOutSine,
+		  target = document.querySelector('#new_target'),
+			bbox = target.getBoundingClientRect(),
+			left = 350,
+		  width = 1000,
+		  height = 300;
+		  otherText = document.querySelector('#new_target1').innerText;
+		target.innerHTML = ''
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
+		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
+		target.innerHTML += otherText.split('').map(
+			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+		).join('');
 
-window.addEventListener('load', () => {
-  self.setInterval(() => {
-    if (flavoursContainer.scrollLeft !== flavoursScrollWidth) {
-      flavoursContainer.scrollTo(flavoursContainer.scrollLeft + 1, 0);
-    }
-  }, 15);
-});
+		Array.prototype.forEach.call(target.children, (el) => {
+		  var 
+				bbox = el.getBoundingClientRect(),
+		    w = bbox.width,
+		    l = bbox.left - left,
+		    offset = easing(l, 0, height, width),
+		    skew = offset - easing(w + l, 0, height, width),
+		    angle = Math.atan(skew/w);
+		  el.style.transform = `translateY(${-offset}px) skewY(${angle}rad)`;
+		});
+
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+      function updateText() {
+        var container = $('.scroll-text');
+        var firstSpan = container.find('span.empty-class:first');
+        var text = firstSpan.text();
+        
+        container.find('span.empty-class').each(function(index) {
+        	$(this).text(container.find('span.empty-class').eq(index + 1).text());
+        });
+        
+        container.find('span.empty-class:last').text(text);
+      }
+      
+      setInterval(updateText, 150); // Adjust the interval as needed (in milliseconds)
+    });
 	</script>
 </body>
 </html>
