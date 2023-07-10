@@ -55,7 +55,7 @@
 			</div>
 			<div style="position:absolute; height: 200px;top:60%;">
 				<div class="target" id="target" style="display:inline-flex;">
-					<span style="color: #004061;font-size:55px;" id="target1">SCReAMINGGGGGGGGGGGGGGGGGGGGGGGGGG</span>
+					<span style="color: #004061;font-size:55px;" id="target1">SCReAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</span>
 				</div>
 				<div class="new_target scroll-text" id="new_target" style="display:inline-flex;">
 					<span id="new_target1">SCReAMING&nbsp;SOON&emsp;</span>
@@ -78,7 +78,13 @@
 		  width = 1000,
 		  height = 300;
 		target.innerHTML = document.querySelector('#target1').innerText.split('').map(
-			(char) => `<span style="color: #004061;font-size:71px;">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #004061;font-size:71px;">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #004061;font-size:71px;">${char}</span>`;
+				}
+			}
 		).join('');
 
 		Array.prototype.forEach.call(target.children, (el) => {
@@ -106,43 +112,103 @@
 		  otherText = document.querySelector('#new_target1').innerText;
 		target.innerHTML = ''
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 		// target.innerHTML += '<span style="padding-left:20px;padding-right:20px;"></span>'
 		target.innerHTML += otherText.split('').map(
-			(char) => `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`
+			function(char, i){ 
+				if (char == 'R'){
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">Re</span>`;
+				} else if (char != 'e') {
+					return `<span style="color: #ff0020;font-size:18px;" class="empty-class">${char}</span>`;
+				}
+			}
 		).join('');
 
 		Array.prototype.forEach.call(target.children, (el) => {
